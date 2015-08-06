@@ -21,7 +21,7 @@ RSpec.describe "Charges", type: :request do
 			expect(page).to have_content("Successed Charge")
 		end
 		
-		it "should have 10 success item" do
+		it "should have 10 success item and 5 failed item" do
 			@count = @success_charge.length
 			@fail_count = @fail_charges.length
 			expect(@count).to equal(10)
