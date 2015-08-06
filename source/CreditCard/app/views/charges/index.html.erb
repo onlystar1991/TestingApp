@@ -1,0 +1,49 @@
+<h1>  Failed Charges  </h1>
+<div class = "list1" style = "width: 100%;">
+	<ul style = "background:  #FF0000">
+		<% @fail_charges.each do |charge| %>
+			<li>
+				<span>Customer Name: <%= Customer.find(charge.customer_id).fistname << " " << Customer.find(charge.customer_id).lastname %></span>
+				<br>
+				<span>Amount: <%= (charge.amount / 100).to_s << " " << charge.currency %></span>
+				<br>
+				<span>Date: <%= Time.at(charge.created).to_s << " " %></span>
+			</li>
+		<%end %>
+	</ul>
+</div>
+
+
+<h1> Disputed Charges</h1>
+<div class = "list2" style = "width: 100%;">
+	
+	<ul style = "background:  #FF5400">
+		<% @disputed_charges.each do |charge| %>
+			<li>
+				<span>Customer Name: <%= Customer.find(charge.customer_id).fistname << " " << Customer.find(charge.customer_id).lastname %></span>
+				<br>
+				<span>Amount: <%= (charge.amount / 100).to_s << " " << charge.currency %></span>
+				<span>Date: <%= Time.at(charge.created).to_s << " " %></span>
+			</li>
+		<%end %>
+	</ul>
+
+</div>
+
+<h1> Successed Charge  </h1>
+<div class = "list3">
+
+	<ul>
+		<% @successed_charges.each do |charge| %>
+			<li>
+				<span>Customer Name: <%= Customer.find(charge.customer_id).fistname << " " << Customer.find(charge.customer_id).lastname %></span>
+				<br>
+				<span>Amount: <%= (charge.amount / 100).to_s << " " << charge.currency %></span>
+				<span>Date: <%= Time.at(charge.created).to_s << " " %></span>
+			</li>
+		<%end %>
+	</ul>
+
+</div>
+
+
